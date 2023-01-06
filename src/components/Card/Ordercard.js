@@ -11,11 +11,11 @@ function Ordercard(props) {
      
   return <Modal>
     {carditems}
-    <div>
+    <div className={styles.total}>
     <span>Total Amount</span>
     <span>30</span></div>
     <div className={styles.actions}>
-        <button className={styles['button--alt']}>close</button>
+        <button className={styles['button--alt']} onClick={props.onCloseHandler}>close</button>
         <button className={styles.button}>Order</button>
     </div>
   </Modal>;

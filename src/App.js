@@ -1,16 +1,25 @@
-import React,{Fragment} from "react";
+import React,{useState} from "react";
 import Header from "./components/Layout/Header";
 import Meals from "./components/Meals/Meals";
 import Ordercard from "./components/Card/Ordercard";
+import Cardprovider from "./components/Store/Cardprovider";
 function App() {
+  const [cartshown,setshown]=useState(false)
+   const showCardHandler=()=>{
+    setshown(true)
+   }
+   const hideCardHandler=()=>{
+    setshown(false)
+   }
+
   return (
-    <Fragment>
-      <Ordercard/>
-    <Header/>
+    <Cardprovider>
+     {cartshown && <Ordercard onCloseHandler={hideCardHandler}/>} 
+    <Header onShow={showCardHandler}/>
     <main>
       <Meals/>
     </main>
-    </Fragment>
+    </Cardprovider>
   )
 }
 

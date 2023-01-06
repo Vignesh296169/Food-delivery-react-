@@ -1,5 +1,4 @@
 
-https://frolicking-belekoy-34c390.netlify.app/
 
 # Getting Started with Create React App
 
